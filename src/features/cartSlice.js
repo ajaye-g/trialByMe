@@ -20,7 +20,7 @@ const cartSlice = createSlice({
       );
       if(itemIndex >=0){
         state.cartItems[itemIndex].cartQuantity += 1;
-        toast.info(`increased ${state.cartItems[itemIndex].title} cart`, {              //toast message is added here
+        toast.info(`increased ${state.cartItems[itemIndex].title} cart`, {         //toast message is added here
             position:"bottom-left",
         });
       } else{
@@ -31,7 +31,7 @@ const cartSlice = createSlice({
         });
        
       }
-      
+      console.log(action.payload);
       localStorage.setItem("cartItems",JSON.stringify(state.cartItems));
     },
 
@@ -81,21 +81,29 @@ const cartSlice = createSlice({
           const itemTotal = price * cartQuantity;
 
           cartTotal.total += itemTotal;
-          cartTotal.quantity += cartQuantity;
+          
+          if(action.payload!==state.cartItems){
+            cartTotal.quantity += 1;
+          }
+          
 
           return cartTotal;
         },
         {
           total: 0,
-          quantity: 0,
+          quantity: 0
         }
       );
       total = parseFloat(total.toFixed(2));
       state.cartTotalQuantity = quantity;
       state.cartTotalAmount = total;
     },
+ 
 }, 
 });
 
-export const { addToCart,removeFromCart,decreaseCart,clearCart, getTotals } = cartSlice.actions;
+
+
+
+export const { addToCart,removeFromCart,decreaseCart,clearCart, getTotals ,cartTotals } = cartSlice.actions;
 export default cartSlice.reducer;

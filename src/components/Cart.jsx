@@ -40,7 +40,7 @@ const Cart = () => {
                 </div>
             </div>
         ) : (
-        <div>
+        <div className="cartMainContainer">
             <div className="titles">
                 <h3 className="productTitle">Product</h3>
                 <h3 className="price">Price</h3>
@@ -54,17 +54,18 @@ const Cart = () => {
                             <img src={cartItem.image} alt={cartItem.title}></img>
                             <div>
                                 <h3>{cartItem.title}</h3>
-                                <h3>{cartItem.category}</h3>
+                                <h4>{cartItem.category}</h4>
+                                <p>{cartItem.description}</p>
                                 <button onClick={()=>handleRemoveFromCart(cartItem)}>Remove</button>
                             </div>
                         </div>
-                        <div className="cartProductPrice">${cartItem.price}</div>
+                        <span className="cartProductPrice">${cartItem.price}</span>
                         <div className="cartProductQuantity">
                             <button onClick={() => handleDecreaseCart(cartItem)}>-</button>
                             <div className="count">{cartItem.cartQuantity}</div>
                             <button onClick={() => handleIncreaseCart(cartItem)}>+</button>
                         </div>
-                        <div className="cartProductTotalPrize">
+                        <div className="cartProductTotalPrice">
                             ${cartItem.price * cartItem.cartQuantity}
                         </div>
                     </div>
@@ -75,7 +76,7 @@ const Cart = () => {
                 <div className="cartCheckout">
                     <div className="subtotal">
                         <span>Subtotal</span>
-                        <span className="amount">${cart.cartTotalAmount}</span>
+                        <span className="amount">?{cart.cartTotalAmount}</span>
                         <button>Check out</button>
                         <div className="continueShopping">
                             <Link to="/">

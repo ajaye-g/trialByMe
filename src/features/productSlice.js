@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import { Action } from "@remix-run/router";
+// import { Action } from "@remix-run/router";
 import axios from "axios"
 
 const initialState = {
@@ -32,7 +32,7 @@ const productsSlice = createSlice({
          [productsFetch.fulfilled]:(state, Action) => {
             state.status ="success";
             state.items=Action.payload;
-            // console.log(Action.payload);
+            // console.log(state.items);
         },
          [productsFetch.rejected]:(state, Action) => {
             state.status ="rejected";
