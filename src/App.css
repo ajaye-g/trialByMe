@@ -17,9 +17,10 @@
   background-color: rgb(83, 159, 179);
   align-items: center;
   padding:10px 10px;
+  
 }
 .navBar h2{
-  font-size: 40px;
+  font-size: 30px;
   color: rgb(77, 80, 71);
 }
 .navBar a{
@@ -43,6 +44,9 @@
   font-size:14px;
   font-weight: 700;
   color: black;
+}
+.dataCategory {
+  color: gray;
 }
 
 /*NotFound*/
@@ -78,7 +82,7 @@
   margin-bottom: 20px;
   border:none;
   border-radius: 5px;
-  background-color: rgb(170, 233, 230);
+  background-color: rgb(211, 245, 148);
   padding:5px;
   
 }
@@ -98,6 +102,10 @@
 }
 
 /* cart */
+.cartRating {
+  display: flex;
+  align-items: center;
+}
 
 .cartContainer {
   padding: 2rem 4rem;
@@ -107,6 +115,9 @@
   font-size: 30px;
   text-align: center;
   background-color: rgb(83, 159, 179);
+  margin-bottom: 30px;
+  padding : 2px 0;
+  border-radius: 6px;
 }
 
 .cartContainer .titles {
@@ -172,7 +183,7 @@
   color: gray;
 }
 .cartItem .cartProduct button:hover {
-  color: black;
+  color: rgb(233, 62, 62);
 }
 
 .cartItem .cartProductQuantity {
@@ -219,6 +230,10 @@
   background: none;
   outline: none;
   cursor: pointer;
+}
+.clearBtn:hover {
+  color: rgb(233, 62, 62);
+  border-color: rgb(233, 62, 62) ;
 }
 .cartCheckout {
   width: 270px;
