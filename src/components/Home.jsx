@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { productsFetch } from "../features/productSlice";
 import Card from 'react-bootstrap/Card';
@@ -22,9 +22,13 @@ const Home = () => {
         dispatch(addToCart(data))
         navigate("/cart"); 
     }
+    const [visible, setVisible]=useState(10)
+    const ShowMoreItems = () =>{
+        setVisible((preValue) => preValue + 10 );
+    }
     return <div className="homeContainer">
         <div className="products">
-            {items.map( (data) => ( 
+            {items.slice(0,visible).map( (data) => ( 
             <div key={data.id} className='d-inline-flex'>
             <Card  className='cardWidth m-3 p-3 ' >
               <Card.Img className='img'  variant="top" src={data.image} />
@@ -43,6 +47,7 @@ const Home = () => {
             </Card>
             </div>
           ))}
+          <div className="loadBton"><button onClick = {ShowMoreItems} className="loadBtn"><b>LOAD MORE</b></button></div>
         </div>
     </div>
 }

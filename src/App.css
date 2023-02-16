@@ -69,8 +69,8 @@
 
 /* home */
 .img{
-  width:auto;
-  height:200px;
+  width:175;
+  height:155px;
   transform: scale(1);
   
 }
@@ -100,7 +100,27 @@
   overflow: hidden;
   height: 20px;
 }
-
+.loadBtn {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: #33d1c26b;
+  font-size: large;
+  margin: 10px 0 0 18px;
+  border:none;
+  color:#3d4047;
+  border-radius: 25px;
+}
+.loadBtn:hover {
+ font-size: larger;
+}
+.loadBton{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 /* cart */
 .cartRating {
   display: flex;

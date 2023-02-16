@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { addToCart, clearCart, decreaseCart, removeFromCart,getTotals } from "../features/cartSlice";
 import { useEffect } from "react";
 
-
 const Cart = () => {
     const cart = useSelector((state => state.cart));
     const dispatch = useDispatch();
@@ -42,10 +41,10 @@ const Cart = () => {
         ) : (
         <div className="cartMainContainer">
             <div className="titles">
-                <h3 className="productTitle">Product</h3>
-                <h3 className="price">Price</h3>
-                <h3 className="quantity">Quantity</h3>
-                <h3 className="total">Total</h3>
+                <h3 className="productTitle"><b>Product</b></h3>
+                <h3 className="price"><b>Price</b></h3>
+                <h3 className="quantity"><b>Quantity</b></h3>
+                <h3 className="total"><b>Total</b></h3>
             </div>
             <div className="cartItems">
                 {cart.cartItems?.map(cartItem=>(
