@@ -30,7 +30,7 @@ const Home = () => {
         <div className="products">
             {items.slice(0,visible).map( (data) => ( 
             <div key={data.id} className='d-inline-flex'>
-            <Card  className='cardWidth m-3 p-3 ' >
+            <Card className='cardWidth m-3 p-3 ' >
               <Card.Img className='img'  variant="top" src={data.image} />
               <Card.Body>
                 <Card.Title><b>{data.title}</b></Card.Title>

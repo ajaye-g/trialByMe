@@ -21,7 +21,7 @@
 }
 .navBar h2{
   font-size: 30px;
-  color: rgb(77, 80, 71);
+  color: white;
 }
 .navBar a{
   color: white;
@@ -106,11 +106,11 @@
   width: 20%;
   cursor: pointer;
   padding: 10px 0;
-  background-color: #33d1c26b;
+  background-color: rgb(83, 159, 179);
   font-size: large;
   margin: 10px 0 0 18px;
   border:none;
-  color:#3d4047;
+  color: white;
   border-radius: 25px;
 }
 .loadBtn:hover {
