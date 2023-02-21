@@ -4,7 +4,7 @@ import { addToCart, clearCart, decreaseCart, removeFromCart,getTotals } from "..
 import { useEffect } from "react";
 
 const Cart = () => {
-    const cart = useSelector((state => state.cart));
+    const cart = useSelector((state => state.cart));  // state.cart(cart is name in cartSlice)) then we can take state value
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -81,7 +81,7 @@ const Cart = () => {
                 <div className="cartCheckout">
                     <div className="subtotal">
                         <span>Subtotal</span>
-                        <span className="amount">?{cart.cartTotalAmount}</span>
+                        <span className="amount">? $ {cart.cartTotalAmount}</span>
                         <button>Check out</button>
                         <div className="continueShopping">
                             <Link to="/">

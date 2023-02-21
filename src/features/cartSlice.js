@@ -17,7 +17,7 @@ const cartSlice = createSlice({
     addToCart(state, action) {                        //
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id ===action.payload.id
-      );
+      );  
       if(itemIndex >=0){
         state.cartItems[itemIndex].cartQuantity += 1;
         toast.info(`increased ${state.cartItems[itemIndex].title} cart`, {         //toast message is added here
@@ -31,7 +31,6 @@ const cartSlice = createSlice({
         });
        
       }
-      console.log(action.payload);
       localStorage.setItem("cartItems",JSON.stringify(state.cartItems));
     },
 
